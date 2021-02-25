@@ -31,9 +31,9 @@ def capitaliseText(text):
 print(capitaliseText('macdonald'))
 
 def reverseString(text):
+    word = text.split()
+    reversed_word_list=word[::-1]
+    return reversed_word_list
+    
 
-    textResult =''
-    for j,i in enumerate(text):
-        print(text[j])
-
-reverseString('hello')
+print(reverseString('hello adeoye'))
