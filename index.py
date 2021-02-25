@@ -33,7 +33,7 @@ print(capitaliseText('macdonald'))
 def reverseString(text):
     word = text.split()
     reversed_word_list=word[::-1]
-    return reversed_word_list
+    return ' '.join(reversed_word_list)
     
 
 print(reverseString('hello adeoye'))
