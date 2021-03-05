@@ -57,3 +57,45 @@ def paper_doll(word):
 
 print("triplword",paper_doll('hello'))
 
+def blackjack(a,b,c):
+    if sum([a,b,c]) <= 21:
+        return sum([a,b,c])
+    elif 11 in [a,b,c] and sum([a,b,c]) <=31:
+        return sum([a,b,c]) - 10
+    else:
+        return "BUST"
+
+print(blackjack(3,20,1))
+
+def sumAfter(arr):
+    
+    total = 0
+    add = True
+
+    for num in arr:
+        while add:
+            if num!= 6:
+                total +=num
+                break
+            else:
+                add = False
+        while not add:
+            if  num!=9:
+                break
+            else:
+                add = True
+                break
+
+    return total
+
+print(sumAfter([1,3,5]))
+
+def spy_game(arr):
+    code = [0,0,7,'x']
+    for j in arr:
+        if j == code[0]:
+            code.pop(0)
+
+    return len(code) == 1   
+
+print('spy',spy_game([1,2,4,5,0,0,9,7]))      
