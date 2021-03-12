@@ -1,3 +1,6 @@
+import string
+
+
 def lesser_of_two_even(a, b):
     if a % 2 == 0 and b % 2 == 0:
         if a > b:
@@ -154,5 +157,94 @@ print('lambda', squarelamda(3))
 
 print('hello', list(map(lambda num: num * 4, mynnums)))
 
-print('get first letter',list(map(lambda v: v[0], names)))
-print('lambda example',list(map(lambda g:g[::-1],names)))
+print('get first letter', list(map(lambda v: v[0], names)))
+print('lambda example', list(map(lambda g: g[::-1], names)))
+
+
+def vol(rad):
+    return (4 / 3) * 3.14 * (rad ** 3)
+
+
+print('vol of radius', vol(2))
+
+squareroot = lambda g: (4 / 3) * 3.14 * (g ** 3)
+
+print('lambda sqrt', squareroot(2))
+
+
+def checkifnumberisinrange(a, b, c):
+    if a > b and a < c:
+        return f'{a} is in the range of {b} and {c} '
+    else:
+        return 'Not in range'
+
+
+print('numberrange', checkifnumberisinrange(9, 8, 34))
+
+
+def ran_check(num, low, high):
+    return num in range(low, high + 1)
+
+
+print(ran_check(2, 1, 5))
+
+
+def up_low(s):
+    lowercase = 0
+    uppercase = 0
+
+    for char in s:
+        if char.isupper():
+            uppercase += 1
+        elif char.islower():
+            lowercase += 1
+        else:
+            pass
+
+    print(f"Original String: {s}")
+    print(f"lowercase count: {lowercase}")
+    print(f"uppercase count: {uppercase}")
+
+
+s = 'HellO loyslsth'
+up_low(s)
+
+
+def removeduplicate(items):
+    j = []
+    for i in items:
+        if i not in j:
+            j.append(i)
+    return j
+
+
+print('remove duplicate', removeduplicate([1, 1, 1, 1, 1, 2, 2, 2, 2, 3, 4, 2, 5]))
+
+
+def multiplyAll(items):
+    num = 1
+    for i in items:
+        num *= i
+    return num
+
+
+k = [1, 2, 3, -4]
+print('multiply all', multiplyAll(k))
+
+
+def checkpalindrome(phrase):
+    phrase = phrase.replace(' ','')
+    return phrase == phrase[::-1]
+
+print(checkpalindrome('LO OL'))
+
+def ispangram(str1,alphabet=string.ascii_lowercase):
+    alphabet = set(alphabet)
+    str1 = str1.replace(' ','')
+    str1 = str1.lower()
+    str1 = set(str1)
+    return  str1 == alphabet
+
+print(ispangram("The quick brown fox jumps over the lazy dog"))
+
+
